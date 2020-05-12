@@ -1,52 +1,67 @@
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class IOConsoleGetStringInput {
+public class IOConsoleGetStringInput_3 {
 
    @Test
    public void getStringInputTest1() {
-      test("0");
+      // : Given
+      String input = "0";
+
+      test(input);
    }
 
    @Test
    public void getStringInputTest2() {
-      test("1");
+      // : Given
+      String input = "1";
+
+      test(input);
    }
 
    @Test
    public void getStringInputTest3() {
-      test("3.14159");
+      // : Given
+      String input = "3.14159";
+
+      test(input);
    }
 
    @Test
    public void getStringInputTest4() {
-      test("0.314159E01");
+      // : Given
+      String input = "0.314159E01";
+
+      test(input);
    }
 
    @Test
    public void getStringInputTest5() {
-      test("-9223372036854775807");
+      // : Given
+      String input = "-9223372036854775807";
+
+      test(input);
    }
 
    @Test
    public void getStringInputTest6() {
-      test("_");
+      // : Given
+      String input = "_";
+
+      test(input);
    }
 
    private void test(String input) {
-      // : Given
-      IOConsole console = getConsoleWithBufferedInput(input);
-
       // : When
+      IOConsole console = getConsoleWithBufferedInput(input);
       String actual = console.getStringInput("");
 
       // : Then
-      Assert.assertEquals(input, actual);
+      assertEquals(input, actual);
    }
 
    private IOConsole getConsoleWithBufferedInput(String inputString) {

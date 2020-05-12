@@ -1,21 +1,24 @@
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class IOConsolePrint {
+public class IOConsolePrint_1 {
 
-   /** Usando un string (cadena) */
+   /**
+    * Test usando un string (cadena)
+    */
    @Test
    public void printTest1() {
       String outputString = "The legion is here.";
       test(outputString);
    }
 
-   /** Usando un string (cadena) con un argumento */
+   /**
+    * Test usando un string (cadena) con un argumento
+    */
    @Test
    public void printTest2() {
       String outputString = "The %s is here.";
@@ -23,7 +26,9 @@ public class IOConsolePrint {
       test(outputString, stringArguments);
    }
 
-   /** Usando un string (cadena) con dos argumentos */
+   /**
+    * Test usando un string (cadena) con dos argumentos
+    */
    @Test
    public void printTest3() {
       String outputString = "The %s is %s.";
@@ -42,6 +47,6 @@ public class IOConsolePrint {
       String actual = outputStream.toString();
 
       // Then
-      Assert.assertEquals(expected, actual);
+      assertEquals(expected, actual);
    }
 }

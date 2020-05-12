@@ -1,10 +1,11 @@
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-public class IOConsolePrintLn {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class IOConsolePrintLn_2 {
 
    @Test
    public void printLnTest1() {
@@ -37,7 +38,7 @@ public class IOConsolePrintLn {
       String actual = outputStream.toString();
 
       // Then
-      Assert.assertEquals(expected, actual);
+      assertEquals(expected, actual);
    }
 
 
